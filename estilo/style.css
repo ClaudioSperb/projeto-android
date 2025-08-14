@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf');
+}
+/* Aqui no setor src: url () foi colocadp ../ para voltar a pasta e ir a pasta de fontes. */
+
+/* Nesse desafio utilizamos duas fontes, uma importada do google fonts e a outra foi dos arquivos baixados no github, utilizando o @font-face. Lembrando que sempre utiliza-se entre aspas dentro do parenteses.*/
+
+:root{
+    --cor0:#c5ebde;
+    --cor1:#83E1AD;
+    --cor2:#3DDC84;
+    --cor3:#2FA866;
+    --cor4:#1A5C37;
+    --cor5:#063d1e;
+
+    --font-padrão: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque:'Bebas Neue', sans-serif;
+    --font-android: 'Android', cursive;
+}
+/* Criamos aqui um :root para facilitar a colocação das cores e fontes em nosso site. Lembrando que essa é a primeira coisa a fazer quando se estrutura um site. Lembrando tambem  que essa declaração é uma pseudo-classe.*/
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/* Aqui utilizamos uma regra geral utilizando o ' * ' e logo em seguida o padding e margin = 0px, para utilizar a pagina inteira da tela*/
+
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--font-padrão);
+}
+
+a.externo::after{
+    content: '\00A0\🔗';
+}
+/* Aqui criei a classe externo para colocar o emoji de link, utilizei o \00A0 para dar um espaço entre o link e o emoji*/
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+/* Aqui nesse exemplo, utilizei o min-height para deixar adaptavel para qualquer modelo de tela. O padding top coloquei para que o titulo dentro da tag ficasse mais para baixo */
+
+header > h1{
+    color: white;
+    font-family:var(--font-destaque);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.507);
+    
+}
+
+header > p{
+    color: white;
+    font-size: 1.3em;
+    max-width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    font: var(--font-padrão);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.788);
+    padding-bottom: 50px;
+}
+/* Coloquei o max-width para a largura da minha caixa ficasse limitada ate os 500px, usando os padding para afastar um pouco nas margens laterais. O margin-auto para centralizar o paragrafo*/
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.514);
+}
+
+nav > a{
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    transition-duration: 0.6s;
+
+}
+
+nav > a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.678);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* Aqui usando o min e max widht, o conteudo do site se adapta conforme o tamanho da tela, as imagens ainda ficam fora pois essa configuração se faz dentro de main img.*/
+
+/* utilizamos os border-botton left e right -radius para que somente a parte de baixo do main, ficasse arredondado, fazendo com o que a parte de cima do main ficasse grudado no cabeçalho.*/
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+/* Aqui nessa declaração, main h1 ou main h2, não coloca-se o > como se estivesse dentro de main, coloca-se somente o main seguindo o titulo direto!!! */
+main h2{
+    color: var(--cor4);
+    font-family: var(--font-android);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+    font-weight: normal;
+}
+
+main p{
+    margin: 15px 0px;
+    text-indent: 30px;
+    line-height: 1.5em;
+    font-size: 1.0em;
+    text-align: justify;
+}
+
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a{
+    background-color: var(--cor1);
+    padding: 3px 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover{
+    color: var(--cor4);
+    text-decoration: underline;
+}
+main img{
+
+    width: 100%;
+}
+/* Nesse exemplo, colocamos 100% para width, para que as imagens se adequem no tamanho da tela.*/
+
+main img.pequena{
+
+    max-width: 350px;
+    margin: auto;
+    display: block;
+}
+
+/* Aqui, após colocar a imagem com a classe = pequena, colocamos o widht de 50% para diminuir a imagem quando ela estiver em telas maiores, o display block foi adicionado para que a imagem se tornasse uma caixa e então centralizada usando o margin auto.*/
+
+div{
+    margin-bottom: 20px;
+    border-radius: 5px 5px;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.623);
+}
+
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20x 30px -20px;
+    padding: 20px;
+
+    position: relative;
+    padding-bottom: 53%;
+}
+/* Nessa propriedade, position Relative para que o padding fique configurado em %*/
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+/* Aqui colocamos o Absolute para que o top e o left ficassem em 5%, o Width e height em 90%, fazendo com que o video se adapte conforme o tamanho da tela*/
+
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-type: '✔️\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
+}
+/* Nesse exemplo utilizei esses 00A0 para dar espaço entre o emoji e a lista*/
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 1.0em;
+    padding: 5px;
+}
+
+footer a{
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
